@@ -1,0 +1,10 @@
+<h1>Заполните данные</h1>
+<input type="text" placeholder="Имя" [(ngModel)]="userName">
+<input type="text" placeholder="Фамилия" [(ngModel)]="userSurname">
+<input type="date">
+<div mat-dialog-actions>
+<button class="addBooks-btn" (click)="CreateRec()"
+        [disabled]="!userName || !userSurname">Ок
+</button>
+  <button mat-dialog-close="">Закрыть</button>
+</div>

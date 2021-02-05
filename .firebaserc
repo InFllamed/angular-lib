@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-libr": {
+      "hosting": {
+        "angular-lib": [
+          "angular-libr"
+        ]
+      }
+    }
+  }
+}

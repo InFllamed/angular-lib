@@ -1,0 +1,15 @@
+<div class="container">
+  <h1 class="lib-title"> {{ title }}</h1>
+
+  <hr>
+
+  <form (ngSubmit)="onSubmit()" class="formChat">
+    <label for="item"></label>
+    <textarea class="textareaChat" type="text" required [(ngModel)]="itemValue" name="item" id="item"></textarea>
+    <button class="btnChat" type="submit">Submit</button>
+  </form>
+  <hr>
+  <div>
+    <p class="userMessage" *ngFor="let item of items | async"> {{ item.content }} </p>
+  </div>
+</div>

@@ -8,11 +8,13 @@ export class CrudService {
 
   constructor(public fireservices: AngularFirestore) { }
 
+  // tslint:disable-next-line:typedef
   create_Newuser(Record)
   {
     return this.fireservices.collection('User').add(Record);
   }
 
+  // tslint:disable-next-line:typedef
   get_Alluser()
   {
     return this.fireservices.collection('User').snapshotChanges();
