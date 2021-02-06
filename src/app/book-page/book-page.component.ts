@@ -1,8 +1,8 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
 import {CrudService} from '../service/crud.service';
 import { MatDialog } from '@angular/material/dialog';
 import {DialogExampleComponent} from '../dialog-example/dialog-example.component';
+
 
 // export interface Todo {
 //   title: string;
@@ -23,9 +23,10 @@ export class BookPageComponent implements OnInit {
   booksAuthor: string;
   booksImg: string;
 
+
   // todos: Todo[] = [];
 
-  constructor(private http: HttpClient, public crudservice: CrudService, public dialog: MatDialog) { }
+  constructor(public crudservice: CrudService, public dialog: MatDialog) { }
 
 
   // tslint:disable-next-line:typedef

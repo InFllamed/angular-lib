@@ -9,6 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { ToastrModule } from 'ngx-toastr';
 
+import { FilterPipe } from './pipes/filter.pipe';
+
 import { AppComponent } from './app.component';
 import {BookPageComponent} from './book-page/book-page.component';
 import { MainPageComponent } from './main-page/main-page.component';
@@ -31,7 +33,8 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
     MainPageComponent,
     ChatComponent,
     DialogExampleComponent,
-    BookOrderComponent
+    BookOrderComponent,
+    FilterPipe
   ],
   entryComponents: [DialogExampleComponent],
   imports: [

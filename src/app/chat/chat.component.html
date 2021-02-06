@@ -2,7 +2,7 @@
 
   <hr>
 
-  <form (ngSubmit)="onSubmit()" class="formChat">
+  <form (ngSubmit)="onSubmit()" class="formChat" name="item">
       <textarea class="textareaChat" type="text"
                 required [(ngModel)]="chatValue" name="item" placeholder="Введите свое сообщение">
       </textarea>
@@ -10,6 +10,6 @@
   </form>
   <hr>
   <div *ngFor="let item of chat | async">
-    <p class="userMessage"> {{ item.content }} </p>
+    <p class="userMessage"> {{ item.content }}</p>
   </div>
 

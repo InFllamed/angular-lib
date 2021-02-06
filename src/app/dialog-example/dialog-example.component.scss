@@ -23,3 +23,17 @@
     color: white;
   }
 }
+
+.modal {
+  display: block;
+  position: relative;
+}
+
+.upd-book-btn__close {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  font-size: 30px;
+}
