@@ -5,19 +5,24 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {environment} from '../environments/environment';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { ToastrModule } from 'ngx-toastr';
+
 import { AppComponent } from './app.component';
 import {BookPageComponent} from './book-page/book-page.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { ChatComponent } from './chat/chat.component';
+import { DialogExampleComponent } from './dialog-example/dialog-example.component';
+import { BookOrderComponent } from './book-order/book-order.component';
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DialogExampleComponent } from './dialog-example/dialog-example.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -25,7 +30,8 @@ import { DialogExampleComponent } from './dialog-example/dialog-example.componen
     BookPageComponent,
     MainPageComponent,
     ChatComponent,
-    DialogExampleComponent
+    DialogExampleComponent,
+    BookOrderComponent
   ],
   entryComponents: [DialogExampleComponent],
   imports: [
@@ -39,7 +45,8 @@ import { DialogExampleComponent } from './dialog-example/dialog-example.componen
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

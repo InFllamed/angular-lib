@@ -1,0 +1,27 @@
+.book-order {
+  display: block;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  border: 1px solid white;
+  color: black;
+  padding: 10px;
+  background: white;
+}
+
+.book-order_block {
+  border: 1px solid black;
+  margin-bottom: 10px;
+}
+
+.book-order-title {
+  font-size: 20px;
+}
+
+.book-order-name {
+  font-size: 15px;
+}
+
+.book-order-surname {
+  font-size: 15px;
+}

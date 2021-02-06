@@ -1,59 +1,51 @@
-<div class="container">
-  <h1>Добавить книгу</h1>
-
-
+<h1 class="mainPage-title">Добавить книгу</h1>
   <div class="addBooks-form">
-    <input class="addBooks-input" type="text" [(ngModel)]="booksTitle" placeholder="Название книги">
-    <input class="addBooks-input" type="text" [(ngModel)]="booksAuthor" placeholder="Автор">
-    <input class="addBooks-input" type="text" [(ngModel)]="booksImg" placeholder="Изображение">
+    <input class="addBooks-input" type="text" required [(ngModel)]="booksTitle" placeholder="Название книги">
+    <input class="addBooks-input" type="text" required [(ngModel)]="booksAuthor" placeholder="Автор">
+    <input class="addBooks-input" type="text" required [(ngModel)]="booksImg" placeholder="URL Изображения">
 
     <button class="addBooks-btn" (click)="CreateRecord()"
             [disabled]="!booksTitle || !booksAuthor || !booksImg">Добавить книгу
     </button>
   </div>
 
-  <h4><b>{{message}}</b></h4>
+  <hr />
 
   <h1 class="lib-title">Добавленные книги:</h1>
 
   <div class="booksAllItem">
-    <div *ngFor="let item of books">
+    <div *ngFor="let item of books" class="books">
 
       <div *ngIf="!item.isedit; else elseBlock">
 
-        <div class="books">
+        <div class="books-item">
           <div class="books-title">
-          <h5>{{item.title}}</h5>
-          <h6>{{item.author}}</h6>
-        </div>
+            <h3>{{item.title}}</h3>
+            <h4>{{item.author}}</h4>
+          </div>
           <div>
             <img class="books-img" src="{{item.img}}" alt="">
           </div>
-
-          <div>
-            <button (click)="EditRecord(item)" class="btn btn-primary btn-xs">Изменить</button>
-            <button (click)="Deletebooks(item.id)" class="btn btn-danger btn-xs">Удалить</button>
-          </div>
-
+            <button (click)="EditRecord(item)" class="books-item_btn">Изменить</button>
+            <button (click)="Deletebooks(item.id)" class="books-item_btn">Удалить</button>
         </div>
       </div>
 
       <ng-template #elseBlock>
-        <div>
+        <div class="upd-book">
           <div>
             <h5 class="books-text">Обновить</h5>
-            <div>
+            <div class="upd-book_input">
               <input class="booksUpdate" type="text" [(ngModel)]="item.edittitle">
               <input class="booksUpdate" type="text" [(ngModel)]="item.editauthor">
               <input class="booksUpdate" type="text" [(ngModel)]="item.editimg">
             </div>
           </div>
 
-          <a href="#" class="btn btn-danger btn-xs" (click)="item.isedit = false">Закрыть</a>
-          <a href="#" class="btn btn-primary btn-xs" (click)="Updatarecord(item)">Обновить</a>
+          <a href="#" class="upd-book_btn" (click)="item.isedit = false">Закрыть</a>
+          <a href="#" class="upd-book_btn" (click)="Updatarecord(item)">Обновить</a>
 
         </div>
       </ng-template>
     </div>
   </div>
-</div>

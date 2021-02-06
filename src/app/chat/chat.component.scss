@@ -1,22 +1,35 @@
 .btnChat {
   font-size: 20px;
+  max-width: 120px;
 }
 
 .textareaChat {
   width: 100%;
   height: 100px;
   resize: none;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .formChat {
   display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
 .userMessage {
+  background-color: #c5c5c5;
+  min-height: 100px;
+  padding: 20px;
   font-size: 20px;
   border-bottom: 1px solid black;
+  margin: 0;
 }
 
 .lib-title {
   text-align: center;
+  padding: 20px 0;
+  text-transform: uppercase;
 }

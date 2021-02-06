@@ -1,4 +1,3 @@
-<div class="container">
   <h1 class="lib-title">БИБЛИОТЕКА</h1>
 <!--  <div class="book">-->
 <!--    <div class="bookPage" *ngFor="let todo of todos">-->
@@ -7,28 +6,26 @@
 <!--      <img class="bookPage_img" [src]="todo.imgUrl" alt="">-->
 <!--      <div class="bookPage_btn">-->
 <!--      <button mat-flat-button color="warn" class="btn">Взять</button>-->
-<!--      <button mat-flat-button color="warn" class="btn">Сдать</button>-->
 <!--    </div>-->
 <!--    </div>-->
 <!--  </div>-->
 
 
-<div class="booksAllItem">
-<div *ngFor="let item of books">
+  <div class="booksAllItem">
+    <div *ngFor="let item of books" class="books">
 
-  <div *ngIf="!item.isedit">
+      <div *ngIf="!item.isedit">
 
-    <div class="books">
-      <div class="books-title">
-        <h5>{{item.title}}</h5>
-        <h6>{{item.author}}</h6>
+        <div class="books-item">
+          <div class="books-title">
+            <h3>{{item.title}}</h3>
+            <h4>{{item.author}}</h4>
+          </div>
+          <div>
+            <img class="books-img" src="{{item.img}}" alt="">
+          </div>
+          <button class="books-item_btn" mat-raised-button (click)="openDialog()">Взять книгу</button>
+        </div>
       </div>
-      <div>
-        <img class="books-img" src="{{item.img}}" alt="">
-      </div>
-      <button mat-raised-button (click)="openDialog()">Взять книгу</button>
     </div>
   </div>
-</div>
-</div>
-</div>

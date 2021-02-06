@@ -1,0 +1,25 @@
+.modal-title {
+  font-size: 30px;
+}
+
+.modal-input {
+  font-size: 25px;
+  padding: 10px;
+  margin: 10px  0;
+}
+
+.upd-book_btn {
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 30px;
+  margin-right: 10px;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}

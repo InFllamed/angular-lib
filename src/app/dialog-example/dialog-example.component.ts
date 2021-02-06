@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../service/crud.service';
 
-
 @Component({
   selector: 'app-dialog-example',
   templateUrl: './dialog-example.component.html',
@@ -11,35 +10,38 @@ export class DialogExampleComponent implements OnInit {
   user: any;
   userName: string;
   userSurname: string;
+  userTitle: string;
 
     constructor(public crudservice: CrudService) { }
 
   ngOnInit(): void {
-    this.crudservice.get_Alluser().subscribe(data => {
-
+    this.crudservice
+      .get_Alluser()
+      .subscribe(data => {
       this.user = data.map(e => {
         return {
           id: e.payload.doc.id,
           isedit: false,
           name: e.payload.doc.data()['title'],
-          surname: e.payload.doc.data()['author']
+          surname: e.payload.doc.data()['author'],
+          title: e.payload.doc.data()['title']
         };
       });
-      console.log(this.user);
-
     });
   }
 
   // tslint:disable-next-line:typedef
   CreateRec() {
-    let Rec = {};
+    const Rec = {};
     Rec['name'] = this.userName;
     Rec['surname'] = this.userSurname;
+    Rec['title'] = this.userTitle;
 
-    this.crudservice.create_Newuser(Rec).then(res => {
+    this.crudservice.create_Newuser(Rec).then( res => {
 
       this.userName = '';
       this.userSurname = '';
+      this.userTitle = '';
     }).catch(error => {
       console.log(error);
     });

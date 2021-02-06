@@ -4,12 +4,12 @@ import {CrudService} from '../service/crud.service';
 import { MatDialog } from '@angular/material/dialog';
 import {DialogExampleComponent} from '../dialog-example/dialog-example.component';
 
-export interface Todo {
-  title: string;
-  author: string;
-  id?: number;
-  imgUrl: string;
-}
+// export interface Todo {
+//   title: string;
+//   author: string;
+//   id?: number;
+//   imgUrl: string;
+// }
 
 
 @Component({
@@ -22,7 +22,8 @@ export class BookPageComponent implements OnInit {
   booksTitle: string;
   booksAuthor: string;
   booksImg: string;
-  todos: Todo[] = [];
+
+  // todos: Todo[] = [];
 
   constructor(private http: HttpClient, public crudservice: CrudService, public dialog: MatDialog) { }
 
@@ -31,7 +32,8 @@ export class BookPageComponent implements OnInit {
   openDialog() {
   this.dialog.open(DialogExampleComponent);
   }
-  // tslint:disable-next-line:typedef
+
+
   // ngOnInit() {
   //   this.http.get<Todo[]>('assets/config.json')
   //     .subscribe(todos => {
@@ -53,8 +55,6 @@ export class BookPageComponent implements OnInit {
           img: e.payload.doc.data()['img'],
         };
       });
-      console.log(this.books);
-
     });
   }
 }

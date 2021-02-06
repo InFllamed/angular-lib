@@ -1,10 +1,10 @@
-<h1>Заполните данные</h1>
-<input type="text" placeholder="Имя" [(ngModel)]="userName">
-<input type="text" placeholder="Фамилия" [(ngModel)]="userSurname">
-<input type="date">
+<h1 class="modal-title">Заполните данные</h1>
+<input class="modal-input" type="text" placeholder="Имя" [(ngModel)]="userName">
+<input class="modal-input" type="text" placeholder="Фамилия" [(ngModel)]="userSurname">
+<input class="modal-input" type="text" placeholder="Книга" [(ngModel)]="userTitle">
 <div mat-dialog-actions>
-<button class="addBooks-btn" (click)="CreateRec()"
-        [disabled]="!userName || !userSurname">Ок
+<button class="upd-book_btn" (click)="CreateRec()"
+        [disabled]="!userName || !userSurname || !userTitle">Ок
 </button>
-  <button mat-dialog-close="">Закрыть</button>
+  <button class="upd-book_btn" mat-dialog-close="">Закрыть</button>
 </div>

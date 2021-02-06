@@ -1,0 +1,10 @@
+
+<div class="book-order">
+<h1>Взяли книги:</h1>
+
+<div *ngFor="let order of userOrder" class="book-order_block">
+  <h3 class="book-order-title"> {{ order.Title }} </h3>
+  <h4 class="book-order-name">{{ order.Name }}</h4>
+  <h4 class="book-order-surname"> {{ order.Surname }}</h4>
+</div>
+</div>

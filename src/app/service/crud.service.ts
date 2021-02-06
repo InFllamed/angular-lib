@@ -44,5 +44,8 @@ export class CrudService {
     this.fireservices.doc('Books/' + RecordId).delete();
   }
 
-
+  // tslint:disable-next-line:typedef
+  getBookOrders() {
+    return this.fireservices.collection('User').snapshotChanges();
+  }
 }

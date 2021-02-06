@@ -9,18 +9,17 @@ import {AngularFireDatabase} from '@angular/fire/database';
 })
 export class ChatComponent {
   title = 'Чат';
-
-  itemValue = '';
-  items: Observable<any[]>;
+  chatValue = '';
+  chat: Observable<any[]>;
 
   constructor(public db: AngularFireDatabase) {
-    this.items = db.list('items').valueChanges();
+    this.chat = db.list('chat').valueChanges();
   }
 
   // tslint:disable-next-line:typedef
   onSubmit() {
-    this.db.list('items').push({content: this.itemValue});
-    this.itemValue = '';
+    this.db.list('chat').push({content: this.chatValue});
+    this.chatValue = '';
   }
 
 }

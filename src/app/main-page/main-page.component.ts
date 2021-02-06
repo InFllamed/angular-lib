@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CrudService} from '../service/crud.service';
-
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-main-page',
@@ -9,19 +9,19 @@ import {CrudService} from '../service/crud.service';
 })
 
 export class MainPageComponent implements OnInit {
-
   books: any;
   booksTitle: string;
   booksAuthor: string;
   booksImg: string;
   message: string;
 
-  constructor(public crudservice: CrudService) {
+  constructor(public crudservice: CrudService, private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
-    this.crudservice.get_Allbooks().subscribe(data => {
-
+    this.crudservice
+      .get_Allbooks()
+      .subscribe(data => {
       this.books = data.map(e => {
         return {
           id: e.payload.doc.id,
@@ -49,7 +49,7 @@ export class MainPageComponent implements OnInit {
       this.booksAuthor = '';
       this.booksImg = '';
       console.log(res);
-      this.message = 'Сохранено';
+      this.toastr.success('', 'Книга Добавлена', { progressBar : true, timeOut: 3000});
     }).catch(error => {
       console.log(error);
     });
@@ -78,6 +78,11 @@ export class MainPageComponent implements OnInit {
   // tslint:disable-next-line:typedef
   Deletebooks(record_id) {
     this.crudservice.delete_books(record_id);
+  }
+
+  // tslint:disable-next-line:typedef
+  showSuccess() {
+    this.toastr.success('Сохранено');
   }
 
 }

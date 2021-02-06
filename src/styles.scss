@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+@import '~ngx-toastr/toastr';
+
 
 .container {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
+  background: white;
 }
 
 body {
@@ -28,8 +31,12 @@ h6 {
   box-sizing: border-box;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.parallax {
+  background-image: url('https://media2.s-nbcnews.com/i/newscms/2020_15/3297941/200406-book-shelf-library-generic-ac-1101p_020e2306d7f38084a8fc201ace0bfa2e.jpg');
+  min-height: 300px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
