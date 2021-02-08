@@ -1,13 +1,13 @@
 <div class="modal">
   <h1 class="modal-title">Заполните данные</h1>
-  <input class="modal-input" type="text" placeholder="Имя" [(ngModel)]="userName">
-  <input class="modal-input" type="text" placeholder="Фамилия" [(ngModel)]="userSurname">
-  <input class="modal-input" type="text" placeholder="Книга" [(ngModel)]="userTitle">
-  <div mat-dialog-actions>
-    <button class="upd-book_btn" (click)="CreateRec()"
-            [disabled]="!userName || !userSurname || !userTitle">Ок
-    </button>
-    <button class="upd-book-btn__close" mat-dialog-close="">&times;</button>
-    <button class="upd-book_btn" mat-dialog-close="">Закрыть</button>
-  </div>
+    <input class="modal-input" type="text" placeholder="Имя" [(ngModel)]="userName">
+    <input class="modal-input" type="text" placeholder="Фамилия" [(ngModel)]="userSurname">
+    <input class="modal-input" type="text" placeholder="Книга" [(ngModel)]="userTitle">
+    <div mat-dialog-actions>
+      <button type="submit" class="upd-book_btn" (click)="CreateRec()" mat-dialog-close
+              [disabled]="!userName || !userSurname || !userTitle" >Ок
+      </button>
+      <button type="button" class="upd-book-btn__close" mat-dialog-close="">&times;</button>
+      <button type="button" class="upd-book_btn" mat-dialog-close="">Закрыть</button>
+    </div>
 </div>

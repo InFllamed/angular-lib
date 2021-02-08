@@ -31,4 +31,8 @@ export class BookOrderComponent implements OnInit {
         console.log('User', this.userOrder);
       });
   }
+
+  Deleteorder(record_id) {
+    this.crudservice.delete_order(record_id);
+  }
 }

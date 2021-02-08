@@ -1,10 +1,10 @@
 <header class="header-lib">
-  <h1 class="header-lib_title">Библиотека</h1>
+  <nav class="header-nav_bar">
+    <a routerLinkActive="active" [routerLink]="['/']" class="header-nav header-nav_links"
+       [routerLinkActiveOptions]="{exact: true}">Главная</a>
+    <a [routerLink]="['/']" class="header-nav_links"><h1 class="header-lib_title">Библиотека</h1></a>
+    <a routerLinkActive="active" [routerLink]="['/main-page']" class="header-nav header-nav_links">Админ</a>
+  </nav>
 </header>
-<app-main-page></app-main-page>
-<hr>
-<app-book-page></app-book-page>
-<app-book-order></app-book-order>
-<hr>
-<app-chat></app-chat>
+<router-outlet></router-outlet>
 

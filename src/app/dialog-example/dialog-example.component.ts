@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../service/crud.service';
+import { ToastrService } from 'ngx-toastr';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+
 
 @Component({
   selector: 'app-dialog-example',
@@ -11,8 +14,9 @@ export class DialogExampleComponent implements OnInit {
   userName: string;
   userSurname: string;
   userTitle: string;
+  form: FormGroup;
 
-    constructor(public crudservice: CrudService) { }
+    constructor(public crudservice: CrudService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.crudservice
@@ -22,8 +26,8 @@ export class DialogExampleComponent implements OnInit {
         return {
           id: e.payload.doc.id,
           isedit: false,
-          name: e.payload.doc.data()['title'],
-          surname: e.payload.doc.data()['author'],
+          name: e.payload.doc.data()['name'],
+          surname: e.payload.doc.data()['surname'],
           title: e.payload.doc.data()['title']
         };
       });
@@ -42,9 +46,9 @@ export class DialogExampleComponent implements OnInit {
       this.userName = '';
       this.userSurname = '';
       this.userTitle = '';
+      this.toastr.success('', 'Книга Взята', { progressBar : true, timeOut: 3000});
     }).catch(error => {
       console.log(error);
     });
-
   }
 }

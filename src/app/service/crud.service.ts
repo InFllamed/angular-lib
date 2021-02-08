@@ -1,13 +1,12 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CrudService {
-
   constructor(public fireservices: AngularFirestore) { }
-
   // tslint:disable-next-line:typedef
   create_Newuser(Record)
   {
@@ -42,6 +41,12 @@ export class CrudService {
   delete_books(RecordId)
   {
     this.fireservices.doc('Books/' + RecordId).delete();
+  }
+
+  // tslint:disable-next-line:typedef
+  delete_order(RecordId)
+  {
+    this.fireservices.doc('User/' + RecordId).delete();
   }
 
   // tslint:disable-next-line:typedef
