@@ -8,7 +8,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { ToastrModule } from 'ngx-toastr';
-
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 
 import { AppComponent } from './app.component';
 import {BookPageComponent} from './book-page/book-page.component';
@@ -47,7 +47,8 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
     BrowserAnimationsModule,
     MatDialogModule,
     MatButtonModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

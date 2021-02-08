@@ -1,33 +1,26 @@
-  <h1 class="lib-title">БИБЛИОТЕКА</h1>
-<!--  <div class="book">-->
-<!--    <div class="bookPage" *ngFor="let todo of todos">-->
-<!--      <h3 class="bookPage_title">{{ todo.title }}</h3>-->
-<!--      <h4 class="bookPage_subtitle">{{ todo.author }}</h4>-->
-<!--      <img class="bookPage_img" [src]="todo.imgUrl" alt="">-->
-<!--      <div class="bookPage_btn">-->
-<!--      <button mat-flat-button color="warn" class="btn">Взять</button>-->
-<!--    </div>-->
-<!--    </div>-->
-<!--  </div>-->
+<h1 class="lib-title">БИБЛИОТЕКА</h1>
 
-  <div class="booksAllItem">
-    <div *ngFor="let item of books" class="books">
+<div class="search-form">
+  <input class="search-input" type="text" [(ngModel)]="search" placeholder="Найти книгу">
+</div>
+<div class="booksAllItem">
+  <div *ngFor="let item of books | filter:search" class="books">
 
-      <div *ngIf="!item.isedit">
+    <div *ngIf="!item.isedit">
 
-        <div class="books-item">
-          <div class="books-title">
-            <h3>{{item.title}}</h3>
-            <h4>{{item.author}}</h4>
-          </div>
-          <div>
-            <img class="books-img" src="{{item.img}}" alt="">
-          </div>
-          <button class="books-item_btn" mat-raised-button (click)="openDialog()">Взять книгу</button>
+      <div class="books-item">
+        <div class="books-title">
+          <h3>{{item.title}}</h3>
+          <h4>{{item.author}}</h4>
         </div>
+        <div>
+          <img class="books-img" src="{{item.img}}" alt="">
+        </div>
+        <button class="books-item_btn" mat-raised-button (click)="openDialog()">Взять книгу</button>
       </div>
     </div>
   </div>
-  <app-book-order></app-book-order>
-  <hr>
-  <app-chat></app-chat>
+</div>
+<app-book-order></app-book-order>
+<hr>
+<app-chat></app-chat>

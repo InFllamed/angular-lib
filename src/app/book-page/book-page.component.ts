@@ -4,14 +4,6 @@ import { MatDialog } from '@angular/material/dialog';
 import {DialogExampleComponent} from '../dialog-example/dialog-example.component';
 
 
-// export interface Todo {
-//   title: string;
-//   author: string;
-//   id?: number;
-//   imgUrl: string;
-// }
-
-
 @Component({
   selector: 'app-book-page',
   templateUrl: './book-page.component.html',
@@ -22,10 +14,7 @@ export class BookPageComponent implements OnInit {
   booksTitle: string;
   booksAuthor: string;
   booksImg: string;
-
-
-  // todos: Todo[] = [];
-
+  search: '';
   constructor(public crudservice: CrudService, public dialog: MatDialog) { }
 
 
@@ -33,14 +22,6 @@ export class BookPageComponent implements OnInit {
   openDialog() {
   this.dialog.open(DialogExampleComponent);
   }
-
-
-  // ngOnInit() {
-  //   this.http.get<Todo[]>('assets/config.json')
-  //     .subscribe(todos => {
-  //       this.todos = todos;
-  //   });
-  // }
 
   // tslint:disable-next-line:typedef
   ngOnInit(){
