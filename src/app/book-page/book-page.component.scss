@@ -54,4 +54,10 @@
 .search-input {
   width: 250px;
   padding: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.search-form-btn {
+  cursor: pointer;
 }

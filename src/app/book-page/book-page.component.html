@@ -1,7 +1,9 @@
 <h1 class="lib-title">БИБЛИОТЕКА</h1>
 
 <div class="search-form">
-  <input class="search-input" type="text" [(ngModel)]="search" placeholder="Найти книгу">
+  <h1 class="search-form-btn" (click)="searchBook = !searchBook" *ngIf="searchBook">Найти книгу</h1>
+  <input (dblclick)="searchBook = !searchBook" *ngIf="!searchBook" class="search-input" type="text"
+         [(ngModel)]="search" placeholder="Найти книгу">
 </div>
 <div class="booksAllItem">
   <div *ngFor="let item of books | filter:search" class="books">

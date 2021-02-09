@@ -15,6 +15,7 @@ export class BookPageComponent implements OnInit {
   booksAuthor: string;
   booksImg: string;
   search: '';
+  searchBook = true;
   constructor(public crudservice: CrudService, public dialog: MatDialog) { }
 
 
